@@ -1291,3 +1291,436 @@ body {
     background: var(--primary-color);
     color: white;
 }
+
+/* Add at the end of your CSS file */
+.clowns {
+    padding: 6rem 0;
+    background: var(--bg-tertiary);
+}
+
+.clowns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.clown-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.clown-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, #ff6b6b, #ff8787);
+}
+
+.clown-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.clown-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8787);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.clown-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.clown-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.clown-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.clown-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+.staff {
+    padding: 6rem 0;
+    background: var(--bg-secondary);
+}
+
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.staff-card {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.staff-avatar {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+}
+
+.staff-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+}
+
+.staff-status {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #22c55e;
+    border: 3px solid var(--bg-tertiary);
+}
+
+.staff-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.staff-role {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    border-radius: 2rem;
+    background: var(--gradient-primary);
+    color: white;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.staff-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.staff-socials a {
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.staff-socials a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.honors {
+    padding: 6rem 0;
+}
+
+.honors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.honor-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.honor-badge {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: var(--gradient-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.honor-badge i {
+    font-size: 2rem;
+    color: white;
+}
+
+.honor-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.honor-user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.honor-user span {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.honor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.partners {
+    padding: 6rem 0;
+    background: var(--bg-tertiary);
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.partner-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.partner-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.partner-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.partner-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.partner-owner {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.partner-owner span {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.partner-description {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.partner-card .btn {
+    width: 100%;
+}
+
+.partner-card .btn i {
+    margin-right: 0.5rem;
+}
+
+.nav-links-primary {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 2rem;
+}
+
+.nav-link {
+    position: relative;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.nav-links-secondary {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--bg-secondary);
+    min-width: 200px;
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    z-index: 1000;
+    margin-top: 0.5rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links-secondary.expanded {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-links-secondary .nav-link {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    white-space: nowrap;
+}
+
+.nav-links-secondary .nav-link:hover {
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.nav-links-secondary .nav-link::after {
+    display: none;
+}
+
+.nav-expand-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-expand-btn:hover {
+    color: var(--primary-color);
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.nav-expand-btn i {
+    transition: transform 0.3s ease;
+}
+
+.nav-expand-btn.expanded i {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+    .nav-links-primary {
+        flex-direction: column;
+        gap: 2rem;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .dropdown {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .nav-expand-btn {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .nav-links-secondary {
+        position: static;
+        background: none;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .nav-links-secondary .nav-link {
+        padding: 0.5rem 0;
+    }
+
+    .nav-links-secondary .nav-link:hover {
+        background: none;
+        color: var(--primary-color);
+    }
+}
