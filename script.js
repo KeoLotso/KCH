@@ -533,3 +533,32 @@ document.getElementById('next-page')?.addEventListener('click', () => {
         displayItems();
     }
 });
+
+// AHH IM GOING TO CRASH OUT BRO WHY AM I SO DUMB BRO WTF
+
+document.addEventListener('DOMContentLoaded', () => {
+    const expandBtn = document.getElementById('nav-expand-btn');
+    const secondaryLinks = document.getElementById('nav-links-secondary');
+
+    expandBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        secondaryLinks.classList.toggle('expanded');
+        expandBtn.classList.toggle('expanded');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!secondaryLinks.contains(e.target) && !expandBtn.contains(e.target)) {
+            secondaryLinks.classList.remove('expanded');
+            expandBtn.classList.remove('expanded');
+        }
+    });
+
+    document.querySelectorAll('.nav-links-secondary .nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            secondaryLinks.classList.remove('expanded');
+            expandBtn.classList.remove('expanded');
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+        });
+    });
+});
