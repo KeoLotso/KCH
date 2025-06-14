@@ -1,4 +1,4 @@
-// mobile shit ahhhh
+// mobile shit ahhhh that doesnt really work anyways cause mobile just looks shit well idc fuck mobile users GRRRR!
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
 
@@ -332,7 +332,6 @@ function createParticles() {
         particlesContainer.appendChild(particle);
     }
     
-    // Add particle animation CSS
     if (!document.querySelector('#particle-styles')) {
         const style = document.createElement('style');
         style.id = 'particle-styles';
@@ -421,3 +420,116 @@ function updateEventCountdowns() {
 
 setInterval(updateEventCountdowns, 1000);
 updateEventCountdowns();
+
+// new shit bruh
+const ITEMS_PER_PAGE = 5;
+let currentPage = 1;
+let filteredItems = [];
+
+function initCompletedFeatures() {
+    const searchInput = document.getElementById('feature-search');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.completed-item');
+    
+    filteredItems = Array.from(items);
+    
+    updatePagination();
+    displayItems();
+
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            filterItems();
+        });
+    }
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            filterItems();
+        });
+    });
+}
+
+function filterItems() {
+    const searchInput = document.getElementById('feature-search');
+    const activeFilter = document.querySelector('.filter-btn.active');
+    const items = document.querySelectorAll('.completed-item');
+    
+    const searchTerm = searchInput.value.toLowerCase();
+    const filterType = activeFilter.dataset.filter;
+
+    filteredItems = Array.from(items).filter(item => {
+        const title = item.querySelector('h3').textContent.toLowerCase();
+        const description = item.querySelector('p').textContent.toLowerCase();
+        const hasTutorial = item.dataset.hasTutorial === 'true';
+
+        const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+        const matchesFilter = filterType === 'all' || 
+            (filterType === 'tutorial' && hasTutorial) || 
+            (filterType === 'no-tutorial' && !hasTutorial);
+
+        return matchesSearch && matchesFilter;
+    });
+
+    currentPage = 1;
+    updatePagination();
+    displayItems();
+}
+
+function displayItems() {
+    const items = document.querySelectorAll('.completed-item');
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+
+    items.forEach(item => {
+        item.style.display = 'none';
+    });
+    
+    filteredItems.slice(startIndex, endIndex).forEach(item => {
+        item.style.display = 'flex';
+    });
+
+    const noResults = document.querySelector('.no-results') || createNoResultsMessage();
+    noResults.style.display = filteredItems.length === 0 ? 'block' : 'none';
+}
+
+function updatePagination() {
+    const totalPages = Math.max(1, Math.ceil(filteredItems.length / ITEMS_PER_PAGE));
+    
+    document.getElementById('current-page').textContent = currentPage;
+    document.getElementById('total-pages').textContent = totalPages;
+    
+    document.getElementById('prev-page').disabled = currentPage <= 1;
+    document.getElementById('next-page').disabled = currentPage >= totalPages;
+}
+
+function createNoResultsMessage() {
+    const message = document.createElement('div');
+    message.className = 'no-results';
+    message.textContent = 'No matching items found';
+    message.style.cssText = 'text-align: center; padding: 2rem; color: var(--text-secondary);';
+    
+    const container = document.querySelector('.completed-items');
+    container.appendChild(message);
+    return message;
+}
+
+document.addEventListener('DOMContentLoaded', initCompletedFeatures);
+
+document.getElementById('prev-page')?.addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        updatePagination();
+        displayItems();
+    }
+});
+
+document.getElementById('next-page')?.addEventListener('click', () => {
+    const totalPages = Math.ceil(filteredItems.length / ITEMS_PER_PAGE);
+    if (currentPage < totalPages) {
+        currentPage++;
+        updatePagination();
+        displayItems();
+    }
+});
