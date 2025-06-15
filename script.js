@@ -562,3 +562,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+const _KEY = 'kch_ratings'; //bruh i am so dumb i wanted to type key and types keo lmfao i am dumb
+let totalRatings = parseInt(localStorage.getItem(_KEY + '_total') || '0');
+let totalVotes = parseInt(localStorage.getItem(_KEY + '_votes') || '0');
+
+function updateDisplay() {
+    const avgRating = totalVotes > 0 ? (totalRatings / totalVotes).toFixed(1) : '0.0';
+    document.getElementById('avg-rating').textContent = avgRating;
+    document.getElementById('total-votes').textContent = totalVotes;
+
+    const stars = document.querySelectorAll('.stars > span');
+    stars.forEach((star, index) => {
+        star.style.color = (5 - index) <= avgRating ? 'var(--accent-color)' : 'var(--text-secondary)';
+    });
+}
+
+function handleRating(rating) {
+    if (localStorage.getItem(_KEY + '_voted')) {
+        alert('You already Voted, thanks for your feedback!');
+        return;
+    }
+
+    totalRatings += rating;
+    totalVotes++;
+    
+    localStorage.setItem(_KEY + '_total', totalRatings.toString());
+    localStorage.setItem(_KEY + '_votes', totalVotes.toString());
+    localStorage.setItem(_KEY + '_voted', 'true');
+    
+    updateDisplay();
+}
+
+const stars = document.querySelectorAll('.stars > span');
+stars.forEach(star => {
+    star.addEventListener('click', (e) => {
+        const rating = parseInt(e.target.dataset.value);
+        handleRating(rating);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', updateDisplay);
