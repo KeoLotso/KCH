@@ -6,6 +6,7 @@
     <title>Keos Coding Hub - Gorila Tag Resources at its peak!</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -81,6 +82,7 @@
         </div>
     </section>
 
+    
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">About Keos Coding Hub</h2>
@@ -218,7 +220,7 @@ public class KeosDiscordScript : MonoBehaviour
             </div>
         </div>
     </section>
-
+    
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Get Connected</h2>
@@ -2406,6 +2408,28 @@ public class KeosDiscordScript : MonoBehaviour
     </div>
     </section>
 
+    <section id="ratings" class="ratings">
+        <div class="container">
+            <h2 class="section-title">Rate Us!</h2>
+            <div class="rating-wrapper">
+                <div class="rating-item">
+                    <h3>How good do you think the server is? (please be honest)</h3>
+                    <h6>(you cant change your vote so dont troll)</h6>
+                    <div class="stars" id="resource-stars">
+                        <span data-value="5">★</span>
+                        <span data-value="4">★</span>
+                        <span data-value="3">★</span>
+                        <span data-value="2">★</span>
+                        <span data-value="1">★</span>
+                    </div>
+                    <div class="rating-info">
+                        <span id="avg-rating">0.0</span>/5 from <span id="total-votes">0</span> votes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -2429,7 +2453,7 @@ public class KeosDiscordScript : MonoBehaviour
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Keo.CS. All rights reserved. (V1.1)</p>
+                <p>&copy; 2025 Keo.CS. All rights reserved. (V1.21)</p>
             </div>
         </div>
     </footer>
