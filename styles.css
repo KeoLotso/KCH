@@ -1724,3 +1724,56 @@ body {
         color: var(--primary-color);
     }
 }
+
+.rating-wrapper {
+    text-align: center;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 2rem auto;
+    border: 1px solid var(--border-color);
+}
+
+.rating-item h3 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.stars {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+
+.stars > span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.stars > span:hover,
+.stars > span:hover ~ span {
+    color: var(--accent-color);
+}
+
+.rating-info {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    color: var(--text-secondary);
+}
+
+#avg-rating {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+#total-votes {
+    color: var(--text-primary);
+    font-weight: 600;
+}
