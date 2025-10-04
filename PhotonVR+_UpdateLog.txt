@@ -1,0 +1,15 @@
+PhotonVR+ V 1.0 Release:
+
+- Safer Connections and Anti-Cheat
+- Easy Region Collection
+- Auto Reconnect
+- Easy Room Settings
+- Spawning built into the Manager
+- Automatic Offline Rig
+- Offline Cosmetics
+- Lightning Fast Connecting
+- Easy Debugging
+- Easy Cosmetic Handeling and Changing
+- Easy Script Updating (Tools > PhotonVR+ > Script Updater)
+- Deprecated script Detection
+- Easy To Use
